@@ -1,0 +1,33 @@
+1，检查用户家目录中的 test.sh 文件是否存在，并且检查是否有执行权限；(自己提前造好脚本)
+ls -l 1.sh | cut  -d ' ' -f1 | cut -b 4,7,10
+2,   分别统计/etc/rc.d/rc.local、/etc/rc.d/init.d/functions和/etc/inittab文件中以#开头的行的行数和空白行数;
+cat /etc/rc.d/rc.local |sed -n '/^$/p' |wc -l
+cat /etc/rc.d/rc.local |sed -n '/^#/p' |wc -l
+3，提示用户输入内容，请判断输入的内容是奇数还是偶数；
+read -p "请输入内容" i
+n=`echo $i|wc -m`
+let m=n-1
+if ((m%2==0));then
+    echo "偶数"
+else
+    echo "奇数"
+fi
+1，如何查看系统版本？（至少用两种方式）
+uname -a
+2，如何在不解压.tar.gz压缩包的情况下，查看里面都有那些文件？
+zcat
+3，如何修改主机名，让其永久生效？
+vim /etc/hostname
+4，在/root目录下有a,b两个文件，在/root目录下执行ls>c，c文件里面是什么内容？
+
+5，history最大可记录多少条历史命令？
+/etc/profile
+6，vim都有那些工作模式，每种工作模式如何进入呢？
+5种
+7，如何复制/etc下的所有文件，需保持原有的文件属性？
+
+8，linux下,目录名和文件名的长度不能超过多少个字符?
+
+9,  vim在编辑一个文件时，机器突然时机了，强制关机重启后，编辑该文件时总是提示发现交换文件.*.swp，如何让提示永久消失呢？
+
+10，配置静态IP地址的时候，为什么需要指定网关地址，网关地址的作用是什么？如何查看当前系统的网关地址？」
